@@ -49,7 +49,7 @@ def index():
     df_filtered = df_sums[['water','food','shelter']]
     col_sum2 = df_filtered.sum()
     totals2 = list(col_sum2)
-    column_names2 = [name.capitalize() for name in col_sums.index]
+    column_names2 = [name.capitalize() for name in col_sum2.index]
     
     
     # create visuals

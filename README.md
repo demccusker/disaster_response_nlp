@@ -9,7 +9,7 @@ To do so, I first created an ETL pipeline. This pipeline loads the messages and 
 
 Next, I built an ML pipeline to build a model that can make predictions about new messages. This pipeline loads the data, splits it into training and test data, builds a text processing pipeline, then trains and tunes a model. This model can be used to make predictions about what categories new messages will fall into. 
 
-Next steps: build a web app with a simple interface that allows a worker to input a message and receive an answer for what categories it falls into. 
+Finally, I built a web app with a simple interface that allows a worker to input a message and receive an answer for what categories it falls into. This allows them to quickly categorize messages and direct help where it's needed most. 
 
 
 ### Libraries Used: 
