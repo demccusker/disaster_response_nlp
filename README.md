@@ -11,6 +11,9 @@ Next, I built an ML pipeline to build a model that can make predictions about ne
 
 Finally, I built a web app with a simple interface that allows a worker to input a message and receive an answer for what categories it falls into. This allows them to quickly categorize messages and direct help where it's needed most. 
 
+The files here are sorted into three folders: app, data, and model. Each folder contains the necessary files to run each python script. To run the app, first use process_data.py and the csv files available in the data folder. This will extract, transform, and load the data into a SQL database. Next, build the model using train_classifier.py in the model folder; the model will be saved as a pickle file. Finally, use run.py in the app folder to run the web app. 
+
+
 
 ### Libraries Used: 
 The libraries used for this project include:
