@@ -11,8 +11,35 @@ Next, I built an ML pipeline to build a model that can make predictions about ne
 
 Finally, I built a web app with a simple interface that allows a worker to input a message and receive an answer for what categories it falls into. This allows them to quickly categorize messages and direct help where it's needed most. 
 
-The files here are sorted into three folders: app, data, and model. Each folder contains the necessary files to run each python script. To run the app, first use process_data.py and the csv files available in the data folder. This will extract, transform, and load the data into a SQL database. Next, build the model using train_classifier.py in the model folder; the model will be saved as a pickle file. Finally, use run.py in the app folder to run the web app. 
+### File Structure
+The files here are sorted into three folders: app, data, and model. Each folder contains the necessary files to run each python script. Here is an overview of the files included here:
+- app
+    - templates
+        - go.html
+        - master.html
+    - run.py
+- data
+    - disaster_categories.csv
+    - disaster_messages.csv
+    - process_data.py
+- model
+    - classifier.pkl
+    - train_classifier.py
 
+
+
+### Running the App
+To run the app, first use process_data.py and the csv files available in the data folder. This will extract, transform, and load the data into a SQL database. Here's an example of the neccesary command: 
+    # To create a processed sqlite db
+    python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
+
+Next, build the model using train_classifier.py in the model folder; the model will be saved as a pickle file. The command should look like this: 
+    # To train and save a pkl model
+    python train_classifier.py ../data/DisasterResponse.db classifier.pkl
+
+Finally, use run.py in the app folder to run the web app. To do, use a command like: 
+    # To deploy the application locally
+    python run.py
 
 
 ### Libraries Used: 

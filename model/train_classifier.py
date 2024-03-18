@@ -75,6 +75,14 @@ def build_model():
     return cv
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    '''
+    Evaluates the fit of the model on the test data. Shows precision, recall, f1-score, and 
+    support for each column
+    inputs: the model, x test and y test data sets, and list of category names
+    returns: none
+    outputs: printed report of precision, recall, f1-score, and support for each column 
+    and best parameter set from the grid search
+    '''
     predicted = model.predict(X_test)
     for i, column in enumerate(Y_test.columns):
         print(f"Classification Report for column: {column}")
@@ -83,6 +91,12 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    '''
+    Saves model to a pickle file
+    inputs: model and file path to save the model to
+    returns: none
+    outputs:  saves the model at the specified filepath
+    '''
     pickle.dump(model, open(model_filepath, 'wb'))
 
 

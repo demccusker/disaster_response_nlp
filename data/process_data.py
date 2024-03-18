@@ -26,6 +26,7 @@ def clean_data(df):
     for column in categories:
         categories[column] = categories[column].str.strip().str[-1]
         categories[column] = categories[column].astype(int)
+    categories = categories[categories['related'] != 2]
     df.drop(labels='categories',axis=1,inplace=True)
     df = pd.concat([df,categories],axis=1)
     df.drop_duplicates(inplace=True)
@@ -38,7 +39,7 @@ def save_data(df, database_filepath):
     returns: nothing 
     '''
     engine = create_engine(f'sqlite:///{database_filepath}')
-    df.to_sql(database_filepath, engine, index=False) 
+    df.to_sql(database_filepath, engine, index=False,if_exists='replace') 
 
 
 def main():
