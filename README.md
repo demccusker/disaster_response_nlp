@@ -29,15 +29,15 @@ The files here are sorted into three folders: app, data, and model. Each folder 
 
 
 ### Running the App
-To run the app, first use process_data.py and the csv files available in the data folder. This will extract, transform, and load the data into a SQL database. Here's an example of the neccesary command: 
+To run the app, first use process_data.py and the csv files available in the data folder. This will extract, transform, and load the data into a SQL database. Here's an example of the neccesary command: <br>
     # To create a processed sqlite db
     python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
 
-Next, build the model using train_classifier.py in the model folder; the model will be saved as a pickle file. The command should look like this: 
+Next, build the model using train_classifier.py in the model folder; the model will be saved as a pickle file. The command should look like this: <br>
     # To train and save a pkl model
     python train_classifier.py ../data/DisasterResponse.db classifier.pkl
 
-Finally, use run.py in the app folder to run the web app. To do, use a command like: 
+Finally, use run.py in the app folder to run the web app. To do, use a command like: <br>
     # To deploy the application locally
     python run.py
 
